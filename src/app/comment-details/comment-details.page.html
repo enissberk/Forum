@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Comment Page</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="border"></div>
+</ion-header>
+
+<ion-content>
+  <div class="container" *ngIf="comment">
+    <div class="content-img">
+      <img [src]="comment.images">
+    </div>
+    <div class="contents">
+      <ion-item lines="none">
+        <ion-avatar>
+          <img [src]="comment.user.profile_picture">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{comment?.user?.nick}}</h2>
+          <p>{{comment?.user?.level}}</p>
+        </ion-label>
+      </ion-item>
+      <div class="comment">
+        <span>{{comment.content}}</span>
+        <strong>
+          <ion-icon name="calendar-outline"></ion-icon>
+          {{comment.date | date:'dd/MM/yyyy'}}
+        </strong>
+      </div>
+    </div>
+
+    <ion-toolbar>
+      <ion-icon class="like" name="caret-up-outline"></ion-icon>
+      <ion-icon class="dislike" name="caret-down-outline"></ion-icon>
+      <ion-icon (click)="_openModal()" slot="end" name="chatbox-ellipses-outline"></ion-icon>
+    </ion-toolbar>
+
+    <ion-card>
+      <div class="contents">
+        <ion-item lines="none">
+          <ion-avatar>
+            <img [src]="comment.user.profile_picture">
+          </ion-avatar>
+          <ion-label>
+            <h2>nick</h2>
+            <p>level</p>
+          </ion-label>
+        </ion-item>
+        <div class="comment">
+          <span>Ut vitae lobortis elit. Duis vestibulum ex odio, id scelerisque dui hendrerit non. Nunc dapibus maximus tellus id sodales. Pellentesque at sapien ligula. </span>
+          <br>
+          <strong>date</strong>
+        </div>
+      </div>
+    </ion-card>
+
+    <ion-footer>
+      <ion-toolbar>
+        <b>Comment Page</b>
+        <p>Footer</p>
+      </ion-toolbar>
+      <span>©Copyright <b>Forum Page</b>. All Rights Reserved Designed by enisberk</span>
+    </ion-footer>
+  </div>
+
+</ion-content>

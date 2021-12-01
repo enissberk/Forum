@@ -1,0 +1,32 @@
+:host {
+  ion-menu {
+    ion-header {
+      ion-toolbar {
+        strong {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+    ion-content {
+      ion-list {
+        margin-left: 10px;
+        ion-item {
+          width: 80%;
+          margin-top: 10px;
+          border-radius: 25px;
+          --background: #f2f3f5;
+        }
+        ion-item:hover {
+          --background: #0671d6;
+          ion-icon {
+            color: white;
+          }
+          ion-label {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

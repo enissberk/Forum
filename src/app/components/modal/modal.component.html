@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Comment to Comment</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="_dismiss()">
+        <ion-icon slot="end" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>What is your comment on this comment ?</ion-card-title>
+    </ion-card-header>
+    <div class="text">
+      <textarea name="textarea" placeholder="Message"></textarea>
+      <section>
+        <ion-button (click)="_send()">Send Message</ion-button>
+      </section>
+    </div>
+  </ion-card>
+
+</ion-content>

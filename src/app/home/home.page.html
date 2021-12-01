@@ -1,20 +1,49 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button (click)="_openSideNav()" menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title slot="start">Forum Page</ion-title>
+    <ion-icon [routerLink]="['/user']" slot="end" name="person"></ion-icon>
   </ion-toolbar>
+  <div class="border"></div>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="container">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div class="category">
+      <div class="category-container" *ngFor="let categorys of this.category">
+        <a routerLink=''><strong>{{categorys.name}}</strong></a>
+      </div>
+    </div>
+
+    <ion-card *ngFor="let comment of this.comment">
+      <div class="contents">
+        <ion-item lines="none">
+          <ion-avatar>
+            <img [src]="comment.user.profile_picture">
+          </ion-avatar>
+          <ion-label>
+            <h2>{{comment.user.nick}}</h2>
+            <p>{{comment.user.level}}</p>
+          </ion-label>
+        </ion-item>
+        <div class="comment">
+          <span>{{comment.content}}</span>
+          <br>
+          <strong>{{comment.date  | date:'dd/MM/yyyy'}}</strong>
+        </div>
+        <ion-button size="small" [routerLink]="['comment-details' ,comment._id]">Read More</ion-button>
+      </div>
+    </ion-card>
+
+    <ion-footer>
+      <ion-toolbar>
+        <b>Forum Page</b>
+        <p>test</p>
+      </ion-toolbar>
+      <span>©Copyright <b>Forum Page</b>. All Rights Reserved Designed by enisberk</span>
+    </ion-footer>
   </div>
 </ion-content>

@@ -6,7 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
-  }
+  },
+  {
+    path: 'comment-details',
+    loadChildren: () => import('../comment-details/comment-details.module').then( m => m.CommentDetailsPageModule)
+  },
 ];
 
 @NgModule({

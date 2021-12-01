@@ -1,3 +1,34 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu menuId="main-menu" content-id="main">
+    <ion-header>
+      <ion-toolbar color="dark">
+        <strong>Forum Menu</strong>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item lines="none" [routerLink]="['/home']" (click)="onMenuClick()">
+          <ion-icon name="home-sharp" slot="start"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-item>
+        <ion-item lines="none" routerLink='/survey' (click)="onMenuClick()">
+          <ion-icon name="clipboard-outline" slot="start"></ion-icon>
+          <ion-label>Survey</ion-label>
+        </ion-item>
+        <ion-item lines="none" routerLink='/signup' (click)="onMenuClick()">
+          <ion-icon name="layers-outline" slot="start"></ion-icon>
+          <ion-label>Login-Register</ion-label>
+        </ion-item>
+        <ion-item lines="none" routerLink='/user' (click)="onMenuClick()">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          <ion-label>Profile</ion-label>
+        </ion-item>
+        <ion-item lines="none" (click)="onMenuClick()">
+          <ion-icon name="close-outline" slot="start"></ion-icon>
+          <ion-label>Menu Close</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>

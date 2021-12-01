@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="border"></div>
+</ion-header>
+
+<ion-content>
+
+  <div class="profile" *ngIf="user">
+    <div class="profile-info">
+      <ion-avatar>
+        <img [src]="this.user.profile_picture">
+      </ion-avatar>
+      <ion-label>
+        <strong>{{this.user.nick}}</strong>
+        <ion-card-subtitle>{{this.user.level}}</ion-card-subtitle>
+        <span>{{this.user.bio}}</span>
+      </ion-label>
+    </div>
+    <div class="category">
+      <div class="categories">
+        <span>Favorite</span>
+      </div>
+      <div class="categories">
+        <span>Comments</span>
+      </div>
+      <div class="categories">
+        <span>About</span>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
